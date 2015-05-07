@@ -134,6 +134,11 @@ host = <%= @riemann_host %>
 port = 5555
 transport = tcp
 
+[[InfluxdbHandler]]
+host = <%= @influxdb_host %>
+port = <%= @influxdb_port %>
+transport = tcp
+
 ################################################################################
 ### Options for collectors
 [collectors]

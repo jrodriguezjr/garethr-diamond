@@ -101,4 +101,8 @@ class diamond::install {
     ensure_resource('package', 'bernhard', {'ensure' => 'present', 'provider' => pip, 'before' => Package['python-pip']})
   }
 
+  if $diamond::influxdb_host {
+    ensure_packages(['python-pip'])
+    ensure_resource('package', 'influxdb', {'ensure' => 'present', 'provider' => pip, 'before' => Package['python-pip']})
+  }
 }
